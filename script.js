@@ -34,24 +34,25 @@ function tiraPalavrasRuins(palavras) {
     }
     return palavrasBoas;
 }
+function contaFrequencias(palavras) {
+    const frequencias = {};
 
-
-
-
-
-
-
-
-function mostraPalavrasChave() { 
-  let palavras = texto.split(/\P{L}+/u);
-
-    for (let i in palavras) {
-        palavras[i] = palavras[i].toLowerCase();
+    for (let i of palavras) {
+        frequencias[i] = 0;
+        for (let j of palavras) {
+            if (i == j) {
+                frequencias[i]++;
+            }
+        }
     }
 
-    palavras = tiraPalavrasRuins(palavras);
+    return frequencias;
+}
 
-    const frequencias = contaFrequencias(palavras);
-    
-    
-} 
+
+
+
+
+
+
+
